@@ -1,0 +1,36 @@
+{% load static %}
+<div class="card">
+    <div class="card-body">
+        <img class="d-block w-50" src="{% static 'img/logo.png' %}" alt="MESABI®">
+        <h2 class="title">enfriadores de tubo de cobre</h2>
+        <p class="subtitle">para hidráulico y compresor enfriador de aire/aceite</p>
+        {% include 'products/content/sliders/copper-tube-cooler.html' %}
+
+        <h3 class="title">Presiones: hasta 150psi (1034 kPa)</h3>
+        <hr>
+        <p class="body">
+            Los enfriadores de tubos de cobre son similares en diseño a los radiadores de motor MESABI®, pero
+            tienen turbuladores internos. Diseñado para aquellas aplicaciones donde se requiere alta eficiencia
+            y el espacio disponible es limitado.
+        </p>
+        <ul class="press-points">
+            <li>
+                <span>núcleo de diseño </span>
+                <br>
+                Tubos de enfriamiento individuales sostenidos en cabezales con sellos de goma flexibles para
+                absorber tensiones mecánicas y térmicas que pueden causar fugas de núcleos convencionales
+            </li>
+            <li>
+                <span>reparable en campo</span>
+                <br>
+                Los sellos permiten que cualquier tubo dañado sea removido y reemplazado en el campo usando
+                herramientas manuales simples y a menudo sin quitar el enfriador del equipo
+            </li>
+            <li>
+                <span>fácil de limpiar</span>
+                <br>
+                Limpiar con aire o agua a alta presión
+            </li>
+        </ul>
+    </div>
+</div>

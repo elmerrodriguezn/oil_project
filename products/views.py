@@ -1,9 +1,18 @@
 from django.shortcuts import render
+from api.queries import *
 
 # Create your views here.
-def index():
-    pass
-def single():
-    pass
-def search():
-    pass
+def index(request):
+    return render(request, 'products/index.html')
+def single(request, default_code):
+    return render(request, 'products/single.html', context_detail(default_code))
+def search(request):
+    q = request.GET['q']
+    return render(request, 'search/index.html', context_search(q))
+def lead(request):
+    fullName = request.POST['fullName']
+    email = request.POST['email']
+    phone = request.POST['phone']
+    description = 'Producto: ' + request.POST['productName'], 'Número de parte Mesabi: ' + request.POST['mpn'], 'Número de parte OEM: ' + request.POST['oempn'], 'Mensaje: ' + request.POST['msg']
+    create_lead(fullName, email, phone, description)
+    return redirect('/gracias-por-contactarnos/')

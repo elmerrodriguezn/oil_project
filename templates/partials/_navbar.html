@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-custom">
-    <a class="navbar-brand" href="#">
-        <img src="https://mesabi.com/wp-content/uploads/2017/03/Mesabi-logo2-Blk-2.png" width="150">
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="navbar-custom">
+    <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="{% static 'img/logo.png' %}" width="150">
         <span id="by-text">BY LYM MÉXICO</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -10,19 +11,19 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="col-md-7 offset-md-2">
-            <div id="searchbar">
+            <div id="search-bar">
                 {% include 'partials/_search_bar.html' %}
             </div>
         </div>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto navbar-nav-custom">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
+                <a class="nav-link" href="{% url 'products.index' %}">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="">Contacto</a>
             </li>
         </ul>
 

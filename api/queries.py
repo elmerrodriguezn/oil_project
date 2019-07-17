@@ -1,5 +1,6 @@
 # Importing api_connection from root project to bring api variables
 from api_connection import *
+import random
 
 # Template function to query api taking arguments
 api_template = lambda model, operation, query='', fields='' : models.execute_kw(db, uid, password, model, operation,[query], fields)
@@ -28,9 +29,10 @@ def context_detail(default_code):
 
     # Template api function
     data_detail= api_template(model, operation, query, fields)
-
+    rand_numb = random.randint(0, 3)
     context_detail = {
-        "detail": data_detail[0]
+        "detail": data_detail[0],
+        "content_rand": 'products/content/{}.html'.format(rand_numb)
     }
 
     return context_detail
@@ -40,7 +42,8 @@ def context_search(q):
     model = 'product.template'
     operation = 'search_read'
     # Query accepting q parameter requested in the view
-    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True],['x_studio_field_QlEui','ilike', q]]
+    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True],['name','ilike', q]]
+    #x_studio_field_QlEui
     fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 12 }
     
     # Template api function

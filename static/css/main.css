@@ -2,40 +2,43 @@ body {
     font-family: 'Roboto Slab', serif;
     background-color: #ffffff;
 }
+/* Navbar */
 .navbar-custom {
-    background-color: #ffffff;
+    background-color: rgba(230, 81, 0, 0.9);
+}
+.navbar-nav-custom .nav-link {
+  font-size: 20px;
+  color: #ffffff;
 }
 #by-text {
   position: absolute;
   font-size: 12px;
-  margin-top: 15px;
-}
-.title {
-  color: #E65100;
-  
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 /* Containers */
+.container-custom {
+  margin: 90px auto 30px auto;
+}
 #main-container {
   position: relative;
   min-height: 100vh;
 }
 .main-header {
-  background: url('https://www.schaeffler.de/remotemedien/media/_shared_media_rwd/04_sectors_1/industry_1/construction_machinery/00085545_16_9-schaeffler-industry-solutions-construction-machinery-crawler-excavator_rwd_600.jpg');
+  background: url('../img//cover.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 100vh;
 }
 .main-header .layer {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   width: 100%;
-  height: 50vh; 
+  height: 100vh; 
 }
 #box {
-  padding: 60px;
+  padding: 15%;
   color: #ffffff;
 }
 #box p {
@@ -45,10 +48,13 @@ body {
 /* Search */
 .btn-search:focus {outline:0;}
 .form-search {
-  position: relative;  
+  position: relative; 
+  
 }
 .form-control-search {
   width: 100%;
+  border-radius: 300px; 
+  border: none;
 }
 .form-search .btn-search {
   background-color: transparent;
@@ -64,15 +70,9 @@ body {
 .fa-search:hover {
   color: #EF6C00;
 }
-.social a {
-  margin-right: 0.4rem; 
-}
-#searchbar { display: none }
+#search-bar { display: none }
 
 /* Buttons */
-.form-control {
-  border-radius: 0;
-}
 .btn-primary {
   background-color:  #E65100;
   color: #ffffff;
@@ -87,25 +87,57 @@ body {
   border: none;
   border-radius: 30px;
 }
-.fa-chevron-circle-right, .fa-chevron-circle-left {
-  color: #CCCC00;
+.fa-chevron-right, .fa-chevron-left {
+  color: #E65100;
 }
 /* Differences section */
 #differences {
   padding: 40px;
   background-image: url(../img/differences/body-bg.jpg);
 }
-#differences h3, p {
+#differences h1 {
+  font-weight: 700;
+}
+#differences p {
   text-align: justify;
   margin-top: 30px;
 }
 .img-diff {
+  height: 100%;
+  width: auto;
 }
-  
+.img-crop {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
 /* Footer */
 #main-footer {
   bottom: 0;
   padding: 60px;
-  background-color: #787878;
+  background-color: #000000;
+  color: #E65100;
 }
-  
+.social a {
+  margin-right: 0.4rem; 
+  color: #E65100;
+  text-decoration: none;
+}
+.social a:hover {
+  margin-right: 0.4rem; 
+  color: #EF6C00;
+}
+/* Titles */
+.page-title {
+  color: #E65100;
+  margin-bottom: 30px;
+}
+.title, .subtitle {
+  text-transform: uppercase;
+}
+.alert-primary-custom {
+  background-color: #FFCC80;
+  border: none;
+}
