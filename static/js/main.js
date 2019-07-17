@@ -9,7 +9,7 @@ var addSearchBar;
     if (window.location.pathname === '/') {
         if (window.pageYOffset > 700) {
             document.getElementById("search-bar").style.display = "block";
-        } else if (window.pageYOffset < 100) {
+        } else {
             document.getElementById("search-bar").style.display = "none";
         }
     } else {
