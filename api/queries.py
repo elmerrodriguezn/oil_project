@@ -5,6 +5,22 @@ import random
 # Template function to query api taking arguments
 api_template = lambda model, operation, query='', fields='' : models.execute_kw(db, uid, password, model, operation,[query], fields)
 
+def context():
+    # Template api function parameters
+    model = 'product.template'
+    operation = 'search_read'
+    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True]]
+    fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui', 'create_date'], 'order': 'create_date'  }
+
+    # Template api function
+    data = api_template(model, operation, query, fields)
+
+    context = {
+        "products": data
+    }
+
+    return data
+
 def context_limit():
     # Template api function parameters
     model = 'product.template'
