@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from api.queries import context_limit
+from api.queries import *
 
 # Create your views here.
 def index(request):
@@ -15,3 +15,6 @@ def send_lead(request):
     msg = request.POST['msg']
     create_lead(fullName, email, phone, msg)
     return redirect('/gracias-por-contactarnos/')
+    
+def thanks(request):
+    return render(request, 'pages/thanks.html')

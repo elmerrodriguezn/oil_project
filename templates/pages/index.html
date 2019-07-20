@@ -1,20 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content%}
+<script>window.onscroll = function () { addSearchBar() };</script>
 <section class="main-header">
     <div class="layer">
         <div id="box">
-            <div class="row">
-                <div class="col-md-8 align-self-center">
-                    <h1>ENFRIADORES DE ACEITE</h1>
-                    <h5>LyM de México líder en la fabricación de enfriadores de aire a aire y de aire a aceite
-                        durante décadas, y hemos suministrado soluciones para aplicaciones en toda la industria.</h5>
-                </div>
-                <div class="col-md-4">
-                    <img src="{% static 'img/aire-to-oil.png' %}" class="img-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 align-self-center">
+                        <h1>ENFRIADORES DE ACEITE</h1>
+                        <h5>LyM de México líder en la fabricación de enfriadores de aire a aire y de aire a aceite
+                            durante décadas, y hemos suministrado soluciones para aplicaciones en toda la industria.
+                        </h5>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'img/aire-to-oil.png' %}" class="img-fluid">
+                    </div>
                 </div>
             </div>
-            {% include 'partials/_search_bar.html' %}
+            <div class="search-bar-box">
+                {% include 'partials/_search_bar.html' %}
+            </div>
         </div>
     </div>
 </section>
@@ -57,41 +63,21 @@
     </div>
 </section>
 <section>
-    <div class="container pt-4">
-        <h1 class="page-title">Enfriadores de aceite recientes</h3>
-            <div class="row">
-                {% if products %}
-                {% for product in products %}
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <div class="card-custom-heading">
-                                <h4 class="card-custom-title">{{ product.name|truncatewords:6 }}</h4>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item disabled" aria-disabled="true">Números de parte</li>
-                                    <li class="list-group-item text-secondary">
-                                        Mesabi:
-                                        <span class="">{{ product.default_code }}</span>
-                                    </li>
-                                    <li class="list-group-item text-secondary">
-                                        OEM:
-                                        <span class="">{{ product.x_studio_field_QlEui }}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <hr>
-                            <a href="{% url 'single' product.default_code %}"
-                                class="btn btn-primary-custom btn-block">Solicitar
-                                cotización</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% else %}
-                <div class="col-md-12">
-                    <p>No se econtráron números de parte</p>
-                </div>
-                {% endif %}
+    <div class="container">
+        <h1 class="page-title">Enfriadores de aceite recientes</h1>
+        <div class="row">
+            {% if products %}
+            {% for product in products %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                {% include 'products/partials/card.html' %}
             </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-md-12">
+                <p>No se econtráron números de parte</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
 </section>
 {% endblock %}

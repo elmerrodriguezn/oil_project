@@ -2,39 +2,20 @@
 {% load static %}
 {% block content%}
 <div class="container container-custom">
-    {% include 'products/partials/advanced-search.html' %}
     <div class="row">
         {% if products %}
         {% for product in products %}
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card card-custom">
-                <div class="card-body">
-                    <div class="card-custom-heading">
-                        <h4 class="card-custom-title">{{ product.name|truncatewords:6 }}</h4>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item disabled" aria-disabled="true">Números de parte</li>
-                            <li class="list-group-item text-secondary">
-                                Mesabi:
-                                <span class="">{{ product.default_code }}</span>
-                            </li>
-                            <li class="list-group-item text-secondary">
-                                OEM:
-                                <span class="">{{ product.x_studio_field_QlEui }}</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr>
-                    <a href="{% url 'single' product.default_code %}" class="btn btn-primary-custom btn-block">Solicitar
-                        cotización</a>
-                </div>
-            </div>
+            {% include 'products/partials/card.html' %}
         </div>
         {% endfor %}
         {% else %}
-        <div class="col-md-12">
+        <div class="col-md-6">
             <p>No se econtráron números de parte</p>
+            {% include 'products/forms/contact.html' %}
         </div>
         {% endif %}
     </div>
     {% include 'products/partials/pagination.html' %}
-    {% endblock %}
+</div>
+{% endblock %}

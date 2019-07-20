@@ -1,6 +1,5 @@
-<script>window.onscroll = function () { addSearchBar() };</script>
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top">
     <a class="navbar-brand" href="{% url 'index' %}">
         <img src="{% static 'img/logo.png' %}" width="150">
         <span id="by-text">BY LYM MÉXICO</span>
@@ -10,8 +9,12 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse">
-        <div class="col-md-7 offset-md-2">
+    <div class="search-bar-mobile">
+        {% include 'partials/_search_bar.html' %}
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class=" col-md-7 offset-md-2">
             <div id="search-bar">
                 {% include 'partials/_search_bar.html' %}
             </div>
@@ -27,6 +30,5 @@
                 <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
             </li>
         </ul>
-
     </div>
 </nav>
