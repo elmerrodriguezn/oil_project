@@ -63,8 +63,7 @@ def context_search(q):
     model = 'product.template'
     operation = 'search_read'
     # Query accepting q parameter requested in the view
-    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True],['name','ilike', q]]
-    #x_studio_field_QlEui
+    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True],['x_studio_field_QlEui','ilike', q]]
     fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 12 }
     
     # Template api function
