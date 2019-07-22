@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %} | Búsqueda {% endblock %}
 {% block content%}
 <div class="container container-custom">
     <h3 class="page-title">Resultados para: "{{ request.GET.q }}"</h3>
