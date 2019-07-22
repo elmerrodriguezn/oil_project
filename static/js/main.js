@@ -6,7 +6,7 @@ var getYear;
 
 var addSearchBar;
 (addSearchBar = function () {
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === '/' && window.pageXOffset < 700) {
         if (window.pageYOffset > 700) {
             document.getElementById("search-bar").style.display = "block";
         } else {
