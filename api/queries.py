@@ -82,7 +82,7 @@ def create_product_lead(fullName, email, phone, description):
     operation = 'create'
     # Query accepting q parameter requested in the view
     query = {
-       'name': 'radiadores-mesabi.com.mx',
+       'name': 'enfriadores-aceite.com.mx',
        'contact_name': fullName,
        'email_from': email,
        'phone': phone,
@@ -99,7 +99,7 @@ def create_lead(fullName, email, phone, msg):
     operation = 'create'
     # Query accepting q parameter requested in the view
     query = {
-       'name': 'radiadores-mesabi.com.mx',
+       'name': 'enfriadores-aceite.com.mx',
        'contact_name': fullName,
        'email_from': email,
        'phone': phone,
