@@ -6,13 +6,14 @@ var getYear;
 
 var addSearchBar;
 (addSearchBar = function () {
-    if (window.location.pathname === '/' && window.pageXOffset < 700) {
+    var mobileWidth = 450;
+    if (window.location.pathname === '/' && innerWidth > mobileWidth) {
         if (window.pageYOffset > 700) {
             document.getElementById("search-bar").style.display = "block";
         } else {
             document.getElementById("search-bar").style.display = "none";
         }
-    } else {
+    } else if (innerWidth > mobileWidth) {
         document.getElementById("search-bar").style.display = "block";
     }
 })();
