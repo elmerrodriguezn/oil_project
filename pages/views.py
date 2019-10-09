@@ -31,7 +31,20 @@ def send_lead(request):
         email = request.POST['email']
         phone = request.POST['phone']
         msg = request.POST['msg']
-        create_lead(full_name, email, phone, msg)
+
+        query = Query()
+
+        data = query.create(
+            'crm.lead',
+            'create',
+            {
+                'name': 'enfriadores-aire.com.mx',
+                'user_id': 110,
+                'contact_name': full_name,
+                'email_from': email,
+                'phone': phone,
+                'description': msg
+            })
         return redirect('thanks')
     else:
         return redirect('index')

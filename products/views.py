@@ -76,15 +76,14 @@ def lead(request):
         full_name = request.POST['full_name']
         email = request.POST['email']
         phone = request.POST['phone']
-        description = \
-            'Producto: ' + request.POST['product_name'], 'Número de parte: ' + request.POST['pn'], 'Mensaje: ' + request.POST['msg']
+        description = 'Producto: ' + request.POST['product_name'], 'Número de parte Mesabi: ' + request.POST['mpn'], 'Número de parte OEM: ' + request.POST['oempn'], 'Mensaje: ' + request.POST['msg']
 
         query = Query()
 
         data = query.create('crm.lead', 'create',
                             {
-                                'name': 'compresoresaire.com',
-                                'user_id': 14,
+                                'name': 'enfriadores-aire.com.mx',
+                                'user_id': 110,
                                 'contact_name': full_name,
                                 'email_from': email,
                                 'phone': phone,
